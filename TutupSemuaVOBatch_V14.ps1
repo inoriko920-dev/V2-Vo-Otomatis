@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'SilentlyContinue'
+﻿﻿$ErrorActionPreference = 'SilentlyContinue'
 $BaseDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $StatePath = Join-Path $BaseDir '.V14_BATCH_STATE.json'
 Add-Type @"
