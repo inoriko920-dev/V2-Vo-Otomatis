@@ -1,0 +1,111 @@
+﻿AUDIT V14 5 BATCH VO1-30 - PART BERURUTAN OTOMATIS
+
+PEMBARUAN UI GOOGLE AI STUDIO - 18 OKTOBER 2026
+- Pembuka VO menunggu UI siap, lalu memilih Create new dialog.
+- Tampilan: Composer, Scene, Sample Context, Speaker 1, dan kolom narasi.
+- Tidak memakai kartu contoh The Master Storyteller yang sekarang berupa preview audio.
+- Zoom 67% diperiksa dari toolbar Chrome setelah halaman siap dan setelah narasi diisi.
+- Hanya Speech block text yang diisi; hasil harus sama dengan seluruh teks Part.
+- Elemen UI dibaca ulang setelah navigasi/perubahan mode.
+- Jika akun belum login atau verifikasi gagal, skrip melaporkan kegagalan.
+- AIStudioUI_V14.ps1 wajib berada satu folder dengan kedua skrip utama.
+- Tombol BAT dan aturan pasangan VO/Part tetap dipakai seperti biasa.
+- Cadangan file sebelum perbaikan ada di subfolder BACKUP SEBELUM FIX UI.
+
+VALIDASI
+- Dibuka langsung di Chrome profil 1. VO: Create new dialog menghasilkan Composer.
+- Scene, Sample Context, Speaker 1 - Zephyr, dan Speech block text teramati.
+- Pengisian teks uji pada kolom narasi berhasil; teks uji sudah dikosongkan kembali.
+- Toolbar Chrome menunjukkan Zoom: 67%.
+- Sintaks Windows PowerShell dan simulasi alur UI/mapping batch lulus.
+- Batch penuh enam jendela belum dijalankan dalam sesi validasi ini.
+
+LOGIKA UTAMA
+Nomor VO mengikuti URUTAN Part yang tersedia, BUKAN angka Part.
+
+V14 mempunyai 5 tombol tetap:
+
+1 - VO1-6
+   memakai 3 Part PERTAMA yang tersedia.
+
+2 - VO7-12
+   memakai 3 Part BERIKUTNYA (urutan ke-4 sampai ke-6).
+
+3 - VO13-18
+   memakai Part urutan ke-7 sampai ke-9.
+
+4 - VO19-24
+   memakai Part urutan ke-10 sampai ke-12.
+
+5 - VO25-30
+   memakai Part urutan ke-13 sampai ke-15.
+
+SETIAP KLIK TOMBOL
+1. Membaca dan mengurutkan semua Part yang tersedia.
+2. Menutup SEMUA window batch V14 yang sebelumnya dibuka/tercatat.
+3. Mengambil 3 Part sesuai nomor tombol.
+4. Membuka VO yang diperlukan saja.
+5. Menata pasangan VO atas-bawah.
+6. Membuka Gemini 2.5 Pro Preview TTS.
+7. Memastikan halaman/login dapat dibaca.
+8. Membuka dialog kosong/Composer, memastikan zoom 67%, mengisi dan memverifikasi seluruh narasi.
+9. SELESAI.
+
+TIDAK DILAKUKAN
+- tidak memilih voice
+- tidak menekan Run/Generate
+- tidak cek durasi
+- tidak Quality Check
+- tidak download
+
+CONTOH: HANYA ADA PART7 SAMPAI PART15
+Part tersedia setelah diurutkan:
+Part7, Part8, Part9, Part10, Part11, Part12, Part13, Part14, Part15
+
+Klik tombol 1:
+Part7 -> VO1 + VO2
+Part8 -> VO3 + VO4
+Part9 -> VO5 + VO6
+
+Klik tombol 2:
+VO1-VO6 otomatis ditutup.
+Part10 -> VO7 + VO8
+Part11 -> VO9 + VO10
+Part12 -> VO11 + VO12
+
+Klik tombol 3:
+VO7-VO12 otomatis ditutup.
+Part13 -> VO13 + VO14
+Part14 -> VO15 + VO16
+Part15 -> VO17 + VO18
+
+Jika klik tombol 4:
+VO13-VO18 otomatis ditutup.
+Karena tidak ada Part urutan ke-10 sampai ke-12, VO19-VO24 tidak dibuka.
+
+CONTOH JUMLAH PART TIDAK KELIPATAN 3
+Jika hanya ada 5 Part:
+Tombol 1 membuka VO1-VO6 untuk 3 Part pertama.
+Tombol 2 hanya membuka VO7-VO10 untuk 2 Part sisanya.
+VO11 dan VO12 TIDAK dibuka.
+
+POSISI WINDOW
+VO1 atas  / VO2 bawah
+VO3 atas  / VO4 bawah
+VO5 atas  / VO6 bawah
+
+Batch berikutnya memakai posisi fisik yang sama:
+VO7 atas  / VO8 bawah
+VO9 atas  / VO10 bawah
+VO11 atas / VO12 bawah
+dan seterusnya sampai VO30.
+
+CARA PAKAI
+1. Taruh TXT / MD / DOCX ke folder INPUT PART.
+2. Nama file wajib mengandung Part + nomor.
+3. Klik tombol batch yang kamu mau.
+4. Untuk pindah kelompok, klik tombol berikutnya. Tidak perlu menutup VO manual.
+
+BATAS
+V14 mendukung VO1 sampai VO30 = maksimal 15 Part yang tersedia.
+Jika Part lebih dari 15, hanya 15 Part pertama setelah diurutkan yang dipakai.

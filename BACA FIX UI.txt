@@ -1,0 +1,9 @@
+﻿AUDIT V14 - FIX UI GOOGLE AI STUDIO / ZOOM 67%
+Folder asli D:\AUDIT V14 5 BATCH VO1-30 - PART BERURUTAN OTOMATIS sudah diperbarui.
+Arsip ini adalah salinan skrip dan petunjuk yang telah diperbaiki.
+Untuk memasang pada salinan folder lain, ekstrak lalu salin semua file dari folder dalam arsip ke folder V14 tersebut.
+Pertahankan INPUT PART dan LOG milik Anda. Arsip tidak menyertakan narasi atau log pribadi.
+Jalankan tombol BAT batch yang sama seperti biasa.
+File tambahan AIStudioUI_V14.ps1 wajib ikut disalin.
+Cadangan sebelum perbaikan disimpan pada subfolder BACKUP SEBELUM FIX UI di folder asli.
+Detail validasi dan batas pengujian tercantum di PETUNJUK V14.txt.

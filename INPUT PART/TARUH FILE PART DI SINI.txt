@@ -1,0 +1,19 @@
+Taruh file Part di folder ini.
+
+Format: TXT, MD, DOCX.
+Nama file harus mengandung Part dan nomor.
+
+Contoh:
+Part7 Nama Film.docx
+Part8 Nama Film.docx
+Part9 Nama Film.docx
+...
+Part15 Nama Film.docx
+
+V14 mengurutkan SEMUA Part yang tersedia berdasarkan nomor Part.
+Nomor VO mengikuti URUTAN Part yang tersedia, bukan angka Part.
+
+Contoh jika hanya tersedia Part7-Part15:
+Tombol 1 -> Part7, Part8, Part9 -> VO1-VO6
+Tombol 2 -> Part10, Part11, Part12 -> VO7-VO12
+Tombol 3 -> Part13, Part14, Part15 -> VO13-VO18
